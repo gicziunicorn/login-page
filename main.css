@@ -1,0 +1,43 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background: linear-gradient(#012cb6, #0136e2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden auto;
+    color: white;
+}
+
+a,
+a:visited {
+    color: white;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 14px 10px;
+}
+
+#bal, #jobb{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#kozep{
+    text-align: center;
+    font-size: 26px;
+    & h2{
+        margin: 0;
+    }
+}
+
+#login{
+    border: 2px solid white;
+    padding: 6px;
+    font-size: 18px;
+    border-radius: 6px;
+}
