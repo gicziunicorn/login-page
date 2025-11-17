@@ -118,8 +118,7 @@ main {
 }
 
 #adatok {
-  width: 55vw;
-  height: ;
+  width: 55vw; 
   background-color: #00000098;
   border-radius: 40px;
   padding: 20px 50px;
