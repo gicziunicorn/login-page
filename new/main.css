@@ -1,0 +1,261 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  background: linear-gradient(0deg, #0286c4 0%, #0026cf 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden auto;
+  color: white;
+}
+
+a,a:visited {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 350px auto 350px;
+  grid-template-rows: 1fr;
+  padding: 14px 20px;
+  border-bottom: 1px solid black;
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+#bal,#jobb {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+#bal {
+  justify-content: flex-start;
+}
+#jobb {
+  margin-left: auto;
+}
+
+#pfp,
+a:has(#pfp) {
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+a:has(#pfp) {
+  user-select: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+  & p {
+    font-size: 26px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  }
+}
+
+#jobb {
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+#kozep {
+  text-align: center;
+  font-size: 26px;
+  & h2 {
+    margin: 0;
+    line-height: 60px;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 32px;
+  }
+}
+
+.hidden{
+  display: none !important;
+}
+
+#data {
+  display: block;
+}
+
+svg {
+  margin-right: 4px;
+}
+
+@property --settingsAnim {
+  syntax: "<length>";
+  initial-value: 102px;
+  inherits: true;
+}
+#settings {
+  --settingsAnim: 102px;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  line-height: 34px;
+  font-size: 20px;
+  border-radius: 6px;
+  max-width: 170px;
+  & svg{
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+#setp{
+  background: linear-gradient(90deg, transparent 0 var(--settingsAnim), white 0);
+  margin-left: calc( var(--settingsAnim) * -1 );
+  color: transparent;
+  background-clip: text;
+  transition: --settingsAnim 0.4s ease-in-out;
+  user-select: none !important;
+}
+#settings:hover {
+  --settingsAnim: 0px;
+  background: #0000001a;
+  & svg{
+    rotate: 180deg;
+  }
+}
+
+
+#setdiv {
+  margin-left: var(--settingsAnim);
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menubutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  padding: 6px 8px;
+  font-size: 20px;
+  line-height: 34px;
+  border-radius: 6px;
+  transition: background 0.15s linear;
+  background-color: #00000028;
+  &:hover {
+    background-color: #00000067;
+  }
+  & p {
+    margin: 0px;
+  }
+}
+
+#reg, #logout {
+  background-color: #ffffff;
+  color: black;
+  &:hover {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 2px white;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 89px);
+  font-family: sans-serif;
+  font-size: large;
+}
+
+#adatok {
+  width: fit-content; 
+  background-color: #00000098;
+  border-radius: 40px;
+  padding: 20px 50px;
+  box-sizing: border-box;
+}
+
+select {
+  width: 135px;
+}
+
+.input-box {
+  font-family: sans-serif;
+}
+
+input:active,
+input:focus,
+input,
+select {
+  height: 40px;
+  width: 260px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: sans-serif;
+  background: #00c8ff;
+  background: linear-gradient(165deg,rgba(0, 200, 255, 1) 0%,rgba(2, 90, 232, 1) 100%) !important;
+  outline: 0;
+  padding: 2px 10px;
+  --text-outline: 0.6px;
+  text-shadow: calc(var(--text-outline) * -1) calc(var(--text-outline) * -1) 0
+      white,
+    calc(var(--text-outline)) calc(var(--text-outline) * -1) 0 white,
+    calc(var(--text-outline) * -1) calc(var(--text-outline)) 0 white,
+    calc(var(--text-outline)) calc(var(--text-outline)) 0 white;
+}
+
+p {
+  margin: 6px 0;
+  width: fit-content;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  margin-right: 6px;
+}
+
+#email {
+  user-select: all;
+}
+
+#passwd-visibility {
+  position: absolute;
+  margin-left: 370px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #555555;
+  text-shadow: none;
+}
+
+input:required,
+select {
+  border: 3px solid black;
+}
+
+#adatok {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form div {
+  width: 410px;
+}
+
+button[type="submit"]{
+  width: 145px;
+  height:34px;
+  font-size:16px;
+  margin-top:20px;
+  background: #0281e8;
+  font-weight: bold;
+}
