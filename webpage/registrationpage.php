@@ -80,7 +80,7 @@
                 <label for="gender">Nem:</label>
                 <select name="gender" id="gender" required tabindex="5">
                     <option value="m">Férfi</option>
-                    <option value="wm">Nő</option>
+                    <option value="w">Nő</option>
                     <option value="x" selected>Nem mondom meg</option>
                 </select>
             </div>

@@ -12,7 +12,7 @@
 <body>
     <?php include 'navbar.php'?>
     <main>
-        <form id="adatok" name="adatok" action="login.php">
+        <form id="adatok" name="adatok" action="login.php" method="get">
             <p>
                 <?php
                     if(isset($_SESSION["msg"])) {
@@ -63,7 +63,7 @@
                 </svg>
             </div>
             <button type="submit">Bejelentkezés</button>
-            <a href="registration.html" style="text-decoration:underline;color:#00b3ff;margin-top:20px;">Új fiók létrehozása</a>
+            <a href="./registrationpage.php" style="text-decoration:underline;color:#00b3ff;margin-top:20px;">Új fiók létrehozása</a>
         </form>
     </main>
 

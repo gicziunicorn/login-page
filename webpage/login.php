@@ -6,13 +6,15 @@ if(!isset($conn)){
     exit;
 }
 
+echo $_SERVER["REQUEST_METHOD"];
 $cred = $_GET["email"];
+echo $_GET["passwd"];
 if ( str_contains($cred, "@") ) {
     $email = $cred;
 
     $password = $_GET["passwd"];
     // Lekérdezés
-    $cmd = $conn->prepare("SELECT `id`, `jelszo`, `uname` FROM `{$table}` WHERE email = ?;");
+    $cmd = $conn->prepare("SELECT id, uname, jelszo, szuldatum, telefon, nem FROM `{$table}` WHERE email = ?;");
     $cmd->bind_param("s", $email);
     $cmd->execute();
     $result = $cmd->get_result();
@@ -24,8 +26,11 @@ if ( str_contains($cred, "@") ) {
     } else {
         $data = $result->fetch_assoc();
         $id = $data["id"];
-        $hash = $data["jelszo"];
         $uname = $data["uname"];
+        $hash = $data["jelszo"];
+        $bdate = $data["szuldatum"];
+        $tel = $data["telefon"];
+        $nem = $data["nem"];
     }
 } else {
     $uname = $cred;
@@ -37,10 +42,14 @@ if (password_verify($password, $hash)) {
     $_SESSION["userid"] = $id;
     $_SESSION["uname"] = $uname;
     $_SESSION["email"] = $email;
+    $_SESSION["date"] = $bdate;
+    $_SESSION["tel"] = $tel;
+    $_SESSION["nem"] = $nem;
     $_SESSION["msg"] = 'login';
     header("Location: index.php");
 } else {
     $_SESSION["msg"] = 'nopasswd';
+    header("Location: loginpage.php");
 }
 
 ?>
