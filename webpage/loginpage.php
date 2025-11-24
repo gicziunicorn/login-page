@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="hu-HU">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +11,35 @@
 </head>
 
 <body>
-    <?php include 'navbar.php'?>
+    <?php include 'navbar.php' ?>
     <main>
         <form id="adatok" name="adatok" action="login.php" method="get">
             <p>
                 <?php
-                    if(isset($_SESSION["msg"])) {
-                        switch ($_SESSION["msg"]) {
-                            case 'regsuccess':
-                                echo '<span style="color:green;">Sikeres regisztráció, mostmár bejelentkezhetsz!</span>';
-                                break;
-                            case 'noemail':
-                                echo '<span style="color:red;">Ez az email cím nincs regisztrálva!</span>';
-                                break;
-                            case 'nopasswd':
-                                echo '<span style="color:red;">A jelszó nem egyezik a megadott email címmel!</span>';
-                                break;
-                            default:
-                                break;
-                        }
-                        unset($_SESSION["msg"]);
+                if (isset($_SESSION["msg"])) {
+                    switch ($_SESSION["msg"]) {
+                        case 'regsuccess':
+                            echo '<span style="color:green;">Sikeres regisztráció, mostmár bejelentkezhetsz!</span>';
+                            break;
+                        case 'noemail':
+                            echo '<span style="color:red;">Ez az email cím nincs regisztrálva!</span>';
+                            break;
+                        case 'nopasswd':
+                            echo '<span style="color:red;">A jelszó nem egyezik a megadott email címmel!</span>';
+                            break;
+                        case 'nouname':
+                            echo '<span style="color:red;">Ez a felhasználónév nincs regisztrálva!</span>';
+                            break;
+                        default:
+                            break;
                     }
+                    unset($_SESSION["msg"]);
+                }
                 ?>
             </p>
             <div id="email-box" class="input-box">
-                <label for="email">E-mail cím:</label>
-                <input name="email" id="email" type="email" placeholder="példa@gmail.com" required spellcheck="false" tabindex="1" autocomplete="off">
+                <label for="email">E-mail cím vagy felhasználónév:</label>
+                <input name="email" id="email" type="text" placeholder="példa@gmail.com" required spellcheck="false" tabindex="1" autocomplete="off">
             </div>
             <div id="passwd-box" class="input-box">
                 <label for="passwd">Jelszó:</label>
@@ -83,7 +87,7 @@
                 openeye.style.visibility = "hidden";
             }
         }
-
     </script>
 </body>
+
 </html>
