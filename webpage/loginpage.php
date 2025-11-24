@@ -13,7 +13,7 @@
 <body>
     <?php include 'navbar.php' ?>
     <main>
-        <form id="adatok" name="adatok" action="login.php" method="get">
+        <form id="adatok" name="adatok" action="login.php">
             <p>
                 <?php
                 if (isset($_SESSION["msg"])) {
@@ -89,5 +89,6 @@
         }
     </script>
 </body>
+
 
 </html>
