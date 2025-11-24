@@ -1,12 +1,13 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="hu-HU">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adathalászat</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="shortcut icon" href="./pics/pfp.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./webpage/pics/pfp.png" type="image/x-icon">
 </head>
 
 <!--------------------
@@ -19,9 +20,10 @@
 ---------------------->
 
 <body>
-    <?php include 'navbar.php'?>
+    <?php include 'navbar.php' ?>
     <main>
         <div id="adatok" style="align-items:flex-start;">
+            <p id="adatuname">Felhasználónév:</p>
             <p id="adatemail">E-mail:</p>
             <p id="adatpass">Jelszó:</p>
             <p id="adatszul">Születési Dátum:</p>

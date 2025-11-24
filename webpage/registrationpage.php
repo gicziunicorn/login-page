@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adathalászat regisztráció</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="shortcut icon" href="./pics/pfp.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./webpage/pics/pfp.png" type="image/x-icon">
 </head>
 
 <!--------------------
@@ -20,21 +20,25 @@
 ---------------------->
 
 <body>
-    <?php include 'navbar.php'?>
+    <?php include 'navbar.php' ?>
     <main>
         <form id="adatok" name="adatok" action="./register.php">
             <?php
-                if(isset($_SESSION["msg"])){
-                    switch ($_SESSION["msg"]) {
-                        case 'already':
-                            echo '<span color="red">Az email címmel már található felhasználó!</span>';
-                            break;
-                        default:
-                            break;
-                    }
-                    unset($_SESSION["msg"]);
+            if (isset($_SESSION["msg"])) {
+                switch ($_SESSION["msg"]) {
+                    case 'already':
+                        echo '<span color="red">Az email címmel már található felhasználó!</span>';
+                        break;
+                    default:
+                        break;
                 }
+                unset($_SESSION["msg"]);
+            }
             ?>
+            <div id="uname-box" class="input-box">
+                <label for="uname">Felhasználónév:</label>
+                <input name="uname" id="uname" type="text" placeholder="user12345" required spellcheck="false" tabindex="1" autocomplete="off">
+            </div>
             <div id="email-box" class="input-box">
                 <label for="email">E-mail cím:</label>
                 <input name="email" id="email" type="email" placeholder="példa@gmail.com" required spellcheck="false" tabindex="1" autocomplete="off">
@@ -85,23 +89,22 @@
     </main>
 
 
-<script>
-    function showPasswd() {
-        var e = document.getElementById("passwd");
-        var shuteye = document.getElementById("shuteye");
-        var openeye = document.getElementById("openeye");
-        if (e.type === "password") {
-            e.type = "text";
-            openeye.style.visibility = "visible";
-            shuteye.style.visibility = "hidden";
-        } else {
-            e.type = "password";
-            shuteye.style.visibility = "visible";
-            openeye.style.visibility = "hidden";
+    <script>
+        function showPasswd() {
+            var e = document.getElementById("passwd");
+            var shuteye = document.getElementById("shuteye");
+            var openeye = document.getElementById("openeye");
+            if (e.type === "password") {
+                e.type = "text";
+                openeye.style.visibility = "visible";
+                shuteye.style.visibility = "hidden";
+            } else {
+                e.type = "password";
+                shuteye.style.visibility = "visible";
+                openeye.style.visibility = "hidden";
+            }
         }
-    }
-
-</script>
+    </script>
 </body>
 
 </html>

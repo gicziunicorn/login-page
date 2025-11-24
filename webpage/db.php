@@ -4,7 +4,7 @@ echo '<body style="background-color:black;color:white;">';
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "felhasznalok";
+$dbname = "felhasznalok2";
 $table = "felhasznaloi_adatok";
 
 try {
@@ -15,5 +15,3 @@ try {
 } catch (\Throwable $err) {
     echo '<p style="color:red;">Catched error: ' . $err . '</p>';
 }
-
-?>

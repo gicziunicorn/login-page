@@ -7,9 +7,9 @@
     </div>
     <div id="kozep">
         <h2><?php
-            if (isset($_SESSION["email"])) {
-                $email = $_SESSION["email"];
-                echo "Üdvözlünk, {$email}!";
+            if (isset($_SESSION["uname"])) {
+                $uname = $_SESSION["uname"];
+                echo "Üdvözlünk, {$uname}!";
             }
         ?></h2>
     </div>
