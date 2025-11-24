@@ -41,9 +41,6 @@ CREATE TABLE `felhasznaloi_adatok` (
 -- A tábla adatainak kiíratása `felhasznaloi_adatok`
 --
 
-INSERT INTO `felhasznaloi_adatok` (`id`, `uname`, `email`, `jelszo`, `szuldatum`, `telefon`, `nem`) VALUES
-(6, 'alma67', 'alma@gmail.com', '$2y$10$ZKkPgAtFn4a8K1F1sITX4.tDvOL6nY6C0W/hfFzSAz52lTUNxQJ2a', '2000-10-10', '123456789', 'm');
-
 --
 -- Indexek a kiírt táblákhoz
 --
