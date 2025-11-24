@@ -9,16 +9,6 @@
     <link rel="stylesheet" href="main.css">
     <link rel="shortcut icon" href="./webpage/pics/pfp.png" type="image/x-icon">
 </head>
-
-<!--------------------
-- email cím
-- jelszó
-- születési dátum
-- telefonszám
-- férfi/nő
-- legmagasabb iskolai végzettség
----------------------->
-
 <body>
     <?php include 'navbar.php' ?>
     <main>
@@ -47,5 +37,6 @@
         </div>
     </main>
 </body>
+
 
 </html>
