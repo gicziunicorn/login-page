@@ -9,13 +9,13 @@ if (!isset($conn)) {
 }
 
 // haladás tovább (változók)
-$uname = $_GET["uname"];
-$email = $_GET["email"];
-$passwd = $_GET["passwd"];
-$bdate = strtotime($_GET["bdate"]);
+$uname = $_POST["uname"];
+$email = $_POST["email"];
+$passwd = $_POST["passwd"];
+$bdate = strtotime($_POST["bdate"]);
 $bdate = date('Y-m-d', $bdate);
-$tel = $_GET["tel"];
-$gender = $_GET["gender"];
+$tel = $_POST["tel"];
+$gender = $_POST["gender"];
 
 // Ellenőrizzük, hogy létezik-e már az email
 echo $email;

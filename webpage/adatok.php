@@ -13,6 +13,7 @@
     <?php include 'navbar.php' ?>
     <main>
         <div id="adatok" style="align-items:flex-start;">
+            <h2>Felhasználói adatok</h2>
             <p id="adatid">Felhasználói azonosító: <?php echo $_SESSION["userid"] ?> </p>
             <p id="adatuname">Felhasználónév: <?php echo $_SESSION["uname"] ?> </p>
             <p id="adatemail">E-mail: <?php echo $_SESSION["email"] ?> </p>
@@ -33,7 +34,7 @@
                                                 echo 'semmi';
                                                 break;
                                         }
-                                        ?> </p>
+            ?> </p>
         </div>
     </main>
 </body>

@@ -7,12 +7,12 @@ if (!isset($conn)) {
 }
 
 echo $_SERVER["REQUEST_METHOD"];
-$cred = $_GET["email"];
-echo $_GET["passwd"];
+$cred = $_POST["email"];
+echo $_POST["passwd"];
 if (str_contains($cred, "@")) {
     $email = $cred;
 
-    $password = $_GET["passwd"];
+    $password = $_POST["passwd"];
     // Lekérdezés
     $cmd = $conn->prepare("SELECT id, uname, jelszo, szuldatum, telefon, nem FROM `{$table}` WHERE email = ?;");
     $cmd->bind_param("s", $email);
@@ -35,7 +35,7 @@ if (str_contains($cred, "@")) {
 } else {
     $uname = $cred;
 
-    $password = $_GET["passwd"];
+    $password = $_POST["passwd"];
     // Lekérdezés
     $cmd = $conn->prepare("SELECT id, email, jelszo, szuldatum, telefon, nem FROM `{$table}` WHERE uname = ?;");
     $cmd->bind_param("s", $uname);

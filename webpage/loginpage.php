@@ -13,7 +13,7 @@
 <body>
     <?php include 'navbar.php' ?>
     <main>
-        <form id="adatok" name="adatok" action="login.php">
+        <form id="adatok" name="adatok" action="login.php" method="post">
             <p>
                 <?php
                 if (isset($_SESSION["msg"])) {

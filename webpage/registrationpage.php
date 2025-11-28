@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="hu-HU">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +11,9 @@
 
 
 <body>
-    <?php include 'navbar.php' ?>
+    <?php include 'navbar.php'; ?>
     <main>
-        <form id="adatok" name="adatok" action="./register.php">
+        <form id="adatok" name="adatok" action="./register.php" method="post">
             <?php
             if (isset($_SESSION["msg"])) {
                 switch ($_SESSION["msg"]) {
