@@ -3,12 +3,11 @@ session_start();
 require 'db.php';
 if (!isset($conn)) {
     echo "Failed to connect to the database :(";
+    header("Location: failed.php");
     exit;
 }
 
-echo $_SERVER["REQUEST_METHOD"];
 $cred = $_POST["email"];
-echo $_POST["passwd"];
 if (str_contains($cred, "@")) {
     $email = $cred;
 

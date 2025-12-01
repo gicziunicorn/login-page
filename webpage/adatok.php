@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="shortcut icon" href="./pics/pfp.png" type="image/x-icon">
 </head>
+
 <body>
     <?php include 'navbar.php' ?>
     <main>
@@ -34,12 +35,10 @@
                                                 echo 'semmi';
                                                 break;
                                         }
-            ?> </p>
+                                        ?> </p>
         </div>
     </main>
 </body>
 
 
 </html>
-
-
