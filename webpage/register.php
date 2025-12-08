@@ -15,6 +15,8 @@ $bdate = strtotime($_POST["bdate"]);
 $bdate = date('Y-m-d', $bdate);
 $tel = $_POST["tel"];
 $gender = $_POST["gender"];
+$vnev = $_POST["vnev"];
+$knev = $_POST["knev"];
 
 // Ellenőrizzük, hogy létezik-e már az email
 $cmd = $conn->prepare("SELECT * FROM {$table} WHERE email = ?;");
@@ -33,8 +35,8 @@ $hashed = password_hash($passwd, PASSWORD_DEFAULT);
 
 
 // Mentés
-$cmd = $conn->prepare("INSERT INTO {$table} (`id`, `uname`, `email`, `jelszo`, `szuldatum`, `telefon`, `nem`) VALUES (NULL, ?, ?, ?, ?, ?, ?);");
-$cmd->bind_param("ssssss",$uname,$email,$hashed,$bdate,$tel,$gender);
+$cmd = $conn->prepare("INSERT INTO {$table} (`id`, `uname`, `email`, `jelszo`, `szuldatum`, `telefon`, `nem`, `vnev`, `knev`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);");
+$cmd->bind_param("ssssssss",$uname,$email,$hashed,$bdate,$tel,$gender,$vnev,$knev);
 $cmd->execute();
 $result = $cmd->get_result();
 //echo "Running '{$sql}'" . "<br>";

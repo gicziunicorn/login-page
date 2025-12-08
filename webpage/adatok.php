@@ -18,6 +18,13 @@
             <p id="adatid">Felhasználói azonosító: <?php echo $_SESSION["userid"] ?> </p>
             <p id="adatuname">Felhasználónév: <?php echo $_SESSION["uname"] ?> </p>
             <p id="adatemail">E-mail: <?php echo $_SESSION["email"] ?> </p>
+            <p>Teljes név: <?php 
+                if ($_SESSION["vnev"]=="" && $_SESSION["knev"]=="") {
+                    echo "Nincs megadva";
+                } else {
+                    echo $_SESSION["vnev"] . " " .  $_SESSION["knev"]; 
+                }
+            ?></p>
             <p id="adatszul">Születési Dátum: <?php echo $_SESSION["date"] ?> </p>
             <p id="adattel">Telefonszám: <?php echo $_SESSION["tel"] ?> </p>
             <p id="adatgender">Neme: <?php $nem = $_SESSION["nem"];

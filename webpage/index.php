@@ -20,7 +20,7 @@
         if ( isset($_SESSION['userid']) ) {
             echo "Be vagy jelentkezve, nézz szét a weboldalon!";
         } else {
-            echo 'Még nem vagy bejelentkezve, <a href="loginpage.php">jelentkezz be</a> vagy <a href="registrationpage.php">hozz létre egy fiókot</a>!';
+            echo 'Még nem vagy bejelentkezve, <a style="font-family:initial;" href="loginpage.php">jelentkezz be</a> vagy <a style="font-family:initial;" href="registrationpage.php">hozz létre egy fiókot</a>!';
         }
     ?></p>
 </body>

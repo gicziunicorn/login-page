@@ -59,13 +59,24 @@
                     </g>
                 </svg>
             </div>
+
+            <div id="a" class="input-box">
+                <label for="vnev">Vezetéknév:</label>
+                <input name="vnev" id="vnev" type="text" required tabindex="" placeholder="Faur">
+            </div>
+            <div id="a" class="input-box">
+                <label for="knev">Keresztnév:</label>
+                <input name="knev" id="knev" type="text" required tabindex="" placeholder="István">
+            </div>
+
+
             <div id="bdate" class="input-box">
                 <label for="bdate">Születési dátum:</label>
                 <input name="bdate" id="bdate" type="date" required tabindex="3" pattern="yyyy. mm dd.">
             </div>
             <div id="telefon" class="input-box">
                 <label for="tel">Telefonszám:</label>
-                <input name="tel" autocomplete="mobile" id="tel" type="tel" placeholder="+36 01 234 5678" required spellcheck="false" tabindex="4">
+                <input name="tel" autocomplete="mobile" id="tel" type="tel" placeholder="+36 01 234 5678" spellcheck="false" tabindex="4">
             </div>
             <div id="nem" class="input-box">
                 <label for="gender">Nem:</label>

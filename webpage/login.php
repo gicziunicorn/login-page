@@ -13,7 +13,7 @@ if (str_contains($cred, "@")) {
 
     $password = $_POST["passwd"];
     // Lekérdezés
-    $cmd = $conn->prepare("SELECT id, uname, jelszo, szuldatum, telefon, nem FROM `{$table}` WHERE email = ?;");
+    $cmd = $conn->prepare("SELECT id, uname, jelszo, szuldatum, telefon, nem, vnev, knev FROM `{$table}` WHERE email = ?;");
     $cmd->bind_param("s", $email);
     $cmd->execute();
     $result = $cmd->get_result();
@@ -30,13 +30,15 @@ if (str_contains($cred, "@")) {
         $bdate = $data["szuldatum"];
         $tel = $data["telefon"];
         $nem = $data["nem"];
+        $vnev = $data["vnev"];
+        $knev = $data["knev"];
     }
 } else {
     $uname = $cred;
 
     $password = $_POST["passwd"];
     // Lekérdezés
-    $cmd = $conn->prepare("SELECT id, email, jelszo, szuldatum, telefon, nem FROM `{$table}` WHERE uname = ?;");
+    $cmd = $conn->prepare("SELECT id, email, jelszo, szuldatum, telefon, nem, vnev, knev FROM `{$table}` WHERE uname = ?;");
     $cmd->bind_param("s", $uname);
     $cmd->execute();
     $result = $cmd->get_result();
@@ -53,6 +55,8 @@ if (str_contains($cred, "@")) {
         $bdate = $data["szuldatum"];
         $tel = $data["telefon"];
         $nem = $data["nem"];
+        $vnev = $data["vnev"];
+        $knev = $data["knev"];
     }
 }
 
@@ -65,6 +69,8 @@ if (password_verify($password, $hash)) {
     $_SESSION["date"] = $bdate;
     $_SESSION["tel"] = $tel;
     $_SESSION["nem"] = $nem;
+    $_SESSION["vnev"] = $vnev;
+    $_SESSION["knev"] = $knev;
     $_SESSION["msg"] = 'login';
     header("Location: index.php");
 } else {
