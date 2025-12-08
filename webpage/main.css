@@ -291,3 +291,8 @@ button[type="submit"]{
   background: #0281e8;
   font-weight: bold;
 }
+
+#adatok button{
+  zoom:0.8;
+  margin: 0;
+}
